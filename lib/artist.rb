@@ -15,7 +15,7 @@ class Artist
 
     def self.find_or_create_by_name(name)
         found_artist = all.find {|artist| artist.name == name}
-        if !all.include?(found_artist)
+        if !found_artist
             new_artist = self.new(name)
             found_artist = new_artist
         end
